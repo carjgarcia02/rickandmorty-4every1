@@ -1,32 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React from "react";
+
+//Components
+import Characters from "./components/Characters"
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import CharacterCard from "./components/CharacterCard"
+import Footer from "./components/Footer"
+
+//Hooks
+import { useEffect, useState } from "react"
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [characters, setCharacters] = useState([]);
+  const [pages, setPages] = useState(1);
+  let url = 'https://rickandmortyapi.com/api/character?page=6';
 
+  const fetchCharacters = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data.results);
+    setCharacters(data.results);
+  }
+
+  /*const ejemplo = [{image:"", name:"Carlos", status:"Alive", species:"Human", gender:"Male"},
+  {image:"", name:"Silvana", status:"Alive", species:"Human", gender:"Male"},
+  {image:"", name:"Julian", status:"Alive", species:"Human", gender:"Male"}]*/
+  
+
+  useEffect(() => {
+    fetchCharacters();
+  }, []);
+
+  
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Navbar />
+      <Hero />
+      <div className="cards-container">
+          {characters.map(item =>   
+          <CharacterCard
+            key={item.id}
+            image={item.image}
+            name={item.name}
+            status={item.status}
+            species={item.species}
+            gender={item.gender} />  
+          )}   
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <Footer />
     </div>
   )
 }
