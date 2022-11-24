@@ -1,44 +1,42 @@
-import React from "react";
-
 //Components
-import Characters from "./components/Characters"
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import CharacterCard from "./components/CharacterCard"
-import Footer from "./components/Footer"
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Pagination from "./components/Pagination";
+import CharacterCard from "./components/CharacterCard";
+import Footer from "./components/Footer";
 
 //Hooks
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 
-
-function App() {
+const App = () => {
   
   const [characters, setCharacters] = useState([]);
-  const [pages, setPages] = useState(1);
-  let url = 'https://rickandmortyapi.com/api/character?page=6';
+  const [totalPages, setTotalPages] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const fetchCharacters = async () => {
+  const fetchCharacters = async (currentPage) => {
+    let url = `https://rickandmortyapi.com/api/character?page=${currentPage}`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data.results);
     setCharacters(data.results);
+    setTotalPages(data.info.pages);
   }
 
-  /*const ejemplo = [{image:"", name:"Carlos", status:"Alive", species:"Human", gender:"Male"},
-  {image:"", name:"Silvana", status:"Alive", species:"Human", gender:"Male"},
-  {image:"", name:"Julian", status:"Alive", species:"Human", gender:"Male"}]*/
-  
-
   useEffect(() => {
-    fetchCharacters();
-  }, []);
+    fetchCharacters(currentPage);
+  }, [currentPage]);
 
-  
+  const changePage = (e) => {
+    e.preventDefault();
+    setCurrentPage(e.target.value);
+  }
+
   return (
     <div className="App">
       <Navbar />
       <Hero />
+      <Pagination currentPage={currentPage} totalPages={totalPages} changePage={changePage}/>
       <div className="cards-container">
           {characters.map(item =>   
           <CharacterCard
@@ -50,7 +48,6 @@ function App() {
             gender={item.gender} />  
           )}   
       </div>
-
       <Footer />
     </div>
   )

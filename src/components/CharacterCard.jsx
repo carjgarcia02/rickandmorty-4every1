@@ -1,4 +1,5 @@
 
+
 const CharacterCard = ({image, name, status, species, gender}) => {
   return (
     <div className="card">
