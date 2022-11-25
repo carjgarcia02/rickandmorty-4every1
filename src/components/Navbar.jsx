@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -6,11 +7,9 @@ const Navbar = () => {
         <img className="nav___logo-img" src="" alt="Rick and Morty logo" />
       </div>
       <div className="nav__links">
-        <ul>
-          <li>Characters</li>
-          <li>Locations</li>
-          <li>Episodes</li>
-        </ul>
+        <Link to="/characters">Characters</Link>      
+        <Link to="/locations">Locations</Link>      
+        <Link to="/episodes">Episodes</Link>      
       </div>
     </div>
   )
