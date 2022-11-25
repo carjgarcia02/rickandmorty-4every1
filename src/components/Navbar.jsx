@@ -5,7 +5,11 @@ const Navbar = () => {
   return (
     <div className="nav">
       <div className="nav__logo">
-        <img className="nav___logo-img" src={RickMortyLogo} alt="Rick and Morty logo" />
+        <img
+          className="nav___logo-img"
+          src={RickMortyLogo}
+          alt="Rick and Morty logo"
+        />
       </div>
       <div className="nav__links">
         <Link to="/characters">Characters</Link>
