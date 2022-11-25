@@ -1,8 +1,8 @@
-# _{RICK AND MORTY 4EVERY1}_
+# **RICK AND MORTY 4EVERY1**
 
-#### By _**{Carlos García Rosas}**_
+#### By **Carlos García Rosas**
 
-#### _{Brief description of application}_
+#### _An informative web app about the Rick and Morty show_
 
 ## Technologies Used
 
@@ -11,25 +11,21 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This webpage was built using React and SASS for styling. You will find the navigation menu at the top-right section, which includes some links to specific information. The data was retreived from this API: https://rickandmortyapi.com/. What is an API? API stands for Application Programming Interface and it’s quite simply a piece of technology that allows two different systems to talk to each other_
+
+_The app groups information inside cards. Every section has its own pagination component and 20 cards are shown per page._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _You can download this project's code from https://github.com/carjgarcia02/rickandmorty-4every1_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _None_
 
 ## License
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_If you run into any issues or have questions, ideas, concerns, or you wish to make a contribution to the code, please contact me via email._
 
 Copyright (c) _2022_ _Carlos García Rosas_

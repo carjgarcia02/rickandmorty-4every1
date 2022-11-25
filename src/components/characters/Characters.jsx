@@ -1,10 +1,8 @@
 import CharacterCard from "./CharacterCard";
-import Pagination from '../Pagination';
+import Pagination from "../Pagination";
 import { useEffect, useState } from "react";
 
-
 const Characters = () => {
-
   const [characters, setCharacters] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,7 +13,7 @@ const Characters = () => {
     const data = await response.json();
     setCharacters(data.results);
     setTotalPages(data.info.pages);
-  }
+  };
 
   useEffect(() => {
     fetchCharacters(currentPage);
@@ -24,24 +22,29 @@ const Characters = () => {
   const changePage = (e) => {
     e.preventDefault();
     setCurrentPage(e.target.value);
-  }
+  };
 
   return (
     <>
-      <Pagination currentPage={currentPage} totalPages={totalPages} changePage={changePage}/>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        changePage={changePage}
+      />
       <div className="cards-container">
-          {characters.map(item =>   
+        {characters.map((item) => (
           <CharacterCard
             key={item.id}
             image={item.image}
             name={item.name}
             status={item.status}
             species={item.species}
-            gender={item.gender} />  
-          )}   
+            gender={item.gender}
+          />
+        ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Characters
+export default Characters;

@@ -1,5 +1,5 @@
-import EpisodeCard from './EpisodeCard';
-import Pagination from '../Pagination';
+import EpisodeCard from "./EpisodeCard";
+import Pagination from "../Pagination";
 import { useEffect, useState } from "react";
 
 const Episodes = () => {
@@ -13,7 +13,7 @@ const Episodes = () => {
     const data = await response.json();
     setEpisodes(data.results);
     setTotalPages(data.info.pages);
-  }
+  };
 
   useEffect(() => {
     fetchEpisodes(currentPage);
@@ -22,22 +22,27 @@ const Episodes = () => {
   const changePage = (e) => {
     e.preventDefault();
     setCurrentPage(e.target.value);
-  }
+  };
 
   return (
     <>
-      <Pagination currentPage={currentPage} totalPages={totalPages} changePage={changePage}/>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        changePage={changePage}
+      />
       <div className="cards-container">
-          {episodes.map(item =>   
+        {episodes.map((item) => (
           <EpisodeCard
             key={item.id}
             name={item.name}
             air_date={item.air_date}
-            episode={item.episode} />  
-          )}   
+            episode={item.episode}
+          />
+        ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Episodes
+export default Episodes;

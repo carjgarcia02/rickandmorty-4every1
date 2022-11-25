@@ -10,20 +10,19 @@ import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
-  
   return (
     <div className="App">
       <Navbar />
       <Hero />
       <Routes>
-        <Route path="/" element={<Characters />}/>
-        <Route path="/characters" element={<Characters />}/>
-        <Route path="/locations" element={<Locations />}/>
-        <Route path="/episodes" element={<Episodes />}/>
-      </Routes>   
+        <Route path="/" element={<Characters />} />
+        <Route path="/characters" element={<Characters />} />
+        <Route path="/locations" element={<Locations />} />
+        <Route path="/episodes" element={<Episodes />} />
+      </Routes>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

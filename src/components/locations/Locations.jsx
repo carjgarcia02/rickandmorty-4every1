@@ -1,5 +1,5 @@
-import Pagination from '../Pagination';
-import LocationCard from './LocationCard';
+import Pagination from "../Pagination";
+import LocationCard from "./LocationCard";
 import { useEffect, useState } from "react";
 
 const Locations = () => {
@@ -13,7 +13,7 @@ const Locations = () => {
     const data = await response.json();
     setLocations(data.results);
     setTotalPages(data.info.pages);
-  }
+  };
 
   useEffect(() => {
     fetchLocations(currentPage);
@@ -22,22 +22,27 @@ const Locations = () => {
   const changePage = (e) => {
     e.preventDefault();
     setCurrentPage(e.target.value);
-  }
+  };
 
   return (
     <>
-      <Pagination currentPage={currentPage} totalPages={totalPages} changePage={changePage}/>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        changePage={changePage}
+      />
       <div className="cards-container">
-          {locations.map(item =>   
+        {locations.map((item) => (
           <LocationCard
             key={item.id}
             name={item.name}
             type={item.type}
-            dimension={item.dimension} />  
-          )}   
+            dimension={item.dimension}
+          />
+        ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Locations
+export default Locations;
