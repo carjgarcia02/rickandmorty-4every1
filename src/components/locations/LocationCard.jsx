@@ -3,14 +3,14 @@ import LocationImage from "../../assets/images/location_image.jpg";
 const LocationCard = ({ name, type, dimension }) => {
   return (
     <div className="card">
-      <img className="card_image" src={LocationImage} alt="Location Image" />
       <div className="card__body">
+        <img className="card_image" src={LocationImage} alt="Location Image" />
         <h3 className="card__title">{name}</h3>
         <p className="card__text">
-          <b>Type: {type}</b>
+          <b>Type:</b> {type}
         </p>
         <p className="card__text">
-          <b>Dimension: {dimension}</b>
+          <b>Dimension:</b> {dimension}
         </p>
       </div>
     </div>

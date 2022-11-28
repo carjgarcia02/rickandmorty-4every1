@@ -1,0 +1,51 @@
+.footer {
+  background-color: $custom-black;
+  color: $custom-white;
+  text-align: center;
+  font-size: 1rem;
+  width: 100vw;
+  padding: 12px;
+
+  &__divider {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &__info {
+    a {
+      color: $custom-white;
+    }
+    a:hover {
+      color: $custom-orange;
+      text-decoration: underline;
+    }
+    a:visited {
+      color: $green-rick;
+    }
+  }
+  &__contact {
+    padding: 0 8px;
+    .icons {
+      height: 100%;
+      margin-top: -14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      &__icon {
+        font-size: 1.5em;
+        color: $custom-white;
+      }
+      &__icon:hover {
+        color: $custom-orange;
+      }
+    }
+  }
+}
+
+.copyright {
+  &__msg {
+    padding: 12px 0;
+  }
+  &__logo {
+    margin-top: 29px;
+  }
+}

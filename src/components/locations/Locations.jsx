@@ -25,13 +25,13 @@ const Locations = () => {
   };
 
   return (
-    <>
+    <div className="main">
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         changePage={changePage}
       />
-      <div className="cards-container">
+      <div className="card-container">
         {locations.map((item) => (
           <LocationCard
             key={item.id}
@@ -41,7 +41,7 @@ const Locations = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,34 +1,63 @@
+import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
+import { GrMail } from "react-icons/gr";
+import { AiOutlineCopyrightCircle } from "react-icons/ai";
+
 const Footer = () => {
   return (
-    <div>
-      <div>
-        <div className="info">
-          <h3>Links of interest</h3>
+    <div className="footer" id="footer">
+      <div className="footer__divider">
+        <div className="footer__info">
+          <h2>Links of interest</h2>
           <p>
-            <a href="https://www.adultswim.com/videos/rick-and-morty">
-              Watch Rick and Morty in HBO Max
+            <a
+              href="https://www.adultswim.com/videos/rick-and-morty"
+              target="_blank"
+            >
+              Watch in HBO Max
             </a>
           </p>
           <p>
-            <a href="https://rickandmortyshop.com/">
+            <a href="https://rickandmortyshop.com/" target="_blank">
               Rick and Morty Online Shop
             </a>
           </p>
           <p>
-            <a href="https://rickandmortyapi.com/">Rick and Morty API</a>
+            <a href="https://rickandmortyapi.com/" target="_blank">
+              Rick and Morty API
+            </a>
           </p>
         </div>
-        <div className="contact">
-          <h3>Contact</h3>
+        <div className="footer__contact">
+          <h2>Contact</h2>
           <div className="icons">
-            <i>Linkedin</i>
-            <i>Github</i>
-            <i>Facebook</i>
+            <a href="#footer">
+              <i className="icons__icon">
+                <BsLinkedin />
+              </i>
+            </a>
+            <a href="#footer">
+              <i className="icons__icon">
+                <GrMail />
+              </i>
+            </a>
+            <a href="#footer">
+              <i className="icons__icon">
+                <BsGithub />
+              </i>
+            </a>
+            <a href="#footer">
+              <i className="icons__icon">
+                <BsFacebook />
+              </i>
+            </a>
           </div>
         </div>
       </div>
       <div className="copyright">
-        <p>Copyright (c) 2022 Carlos García Rosas</p>
+        <p className="copyright__msg">
+          Copyright <AiOutlineCopyrightCircle className="copyright__logo" />{" "}
+          2022 <b>Carlos García Rosas</b> - All Rights Reserved.
+        </p>
       </div>
     </div>
   );

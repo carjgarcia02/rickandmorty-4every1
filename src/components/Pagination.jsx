@@ -13,13 +13,16 @@ const Pagination = ({ totalPages, changePage }) => {
 
   return (
     <>
-      <div className="pagination">
-        <div>
-          <span>PAGE # </span>
-          <select name="pages" id="pages" onChange={changePage}>
-            {createOptions(totalPages).map((item) => item)}
-          </select>
-        </div>
+      <div className="pages">
+        <span className="pages__title">Page # </span>
+        <select
+          className="pages__number"
+          name="pages"
+          id="pages"
+          onChange={changePage}
+        >
+          {createOptions(totalPages).map((item) => item)}
+        </select>
       </div>
     </>
   );

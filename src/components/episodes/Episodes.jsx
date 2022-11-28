@@ -25,13 +25,13 @@ const Episodes = () => {
   };
 
   return (
-    <>
+    <div className="main">
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         changePage={changePage}
       />
-      <div className="cards-container">
+      <div className="card-container">
         {episodes.map((item) => (
           <EpisodeCard
             key={item.id}
@@ -41,7 +41,7 @@ const Episodes = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,121 @@
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    &__img {
+      width: 90px;
+      height: 45px;
+    }
+    &__links {
+      background-color: white;
+      height: 100px;
+      width: 140px;
+      font-size: 3vw;
+      text-align: center;
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-around;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      gap: 0;
+      transition: ease-in 0.3s;
+      &-nav:hover {
+        background-color: $green-rick;
+      }
+    }
+    &__hamburger-icon {
+      display: inline;
+      font-size: 26px;
+    }
+  }
+  .hidden {
+    transform: translateX(100%);
+  }
+  .visible {
+    display: flex;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    &__img {
+      width: 90px;
+      height: 45px;
+    }
+    &__links {
+      background-color: white;
+      height: 150px;
+      width: 200px;
+      font-size: 3vw;
+      text-align: center;
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-around;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      gap: 0;
+      transition: ease-in 0.3s;
+      &-nav:hover {
+        background-color: $green-rick;
+      }
+    }
+    &__hamburger-icon {
+      display: inline;
+      font-size: 26px;
+    }
+  }
+  .hidden {
+    transform: translateX(100%);
+  }
+  .visible {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nav__links {
+    font-size: 3vw;
+  }
+  .footer {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .nav__links {
+    font-size: 3vw;
+  }
+  .footer {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1440px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .nav__links {
+    font-size: 3vw;
+  }
+  .footer {
+    font-size: 1.3rem;
+  }
+}

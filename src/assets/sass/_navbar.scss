@@ -1,0 +1,49 @@
+.nav {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative;
+  &__image {
+    width: 160px;
+    height: 55px;
+    cursor: pointer;
+    transition: 100ms;
+    user-select: none;
+  }
+  &__image:hover {
+    transform: scale(1.1);
+  }
+  &__links {
+    display: flex;
+    gap: 20px;
+    font-size: 1.6vw;
+    font-weight: bold;
+    height: 100%;
+    user-select: none;
+    &-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 8px;
+      color: $custom-black;
+      cursor: pointer;
+    }
+    &-nav:hover {
+      background-color: $green-rick;
+    }
+  }
+  &__hamburger-menu {
+    color: yellow;
+  }
+  &__hamburger-icon {
+    cursor: pointer;
+    display: none;
+    user-select: none;
+  }
+}
+
+

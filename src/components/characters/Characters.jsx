@@ -25,13 +25,13 @@ const Characters = () => {
   };
 
   return (
-    <>
+    <div className="main">
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         changePage={changePage}
       />
-      <div className="cards-container">
+      <div className="card-container">
         {characters.map((item) => (
           <CharacterCard
             key={item.id}
@@ -40,10 +40,11 @@ const Characters = () => {
             status={item.status}
             species={item.species}
             gender={item.gender}
+            location={item.location.name}
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
