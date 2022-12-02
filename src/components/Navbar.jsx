@@ -1,5 +1,5 @@
 // Links from React-Router
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // Navbar logo
 import RickMortyLogo from "../assets/images/Rick_and_Morty.svg";
 // Icons
@@ -27,7 +27,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="nav">
+    <nav className="nav">
       <a href="https://en.wikipedia.org/wiki/Rick_and_Morty" target="_blank">
         <img
           className="nav__image"
@@ -36,15 +36,30 @@ const Navbar = () => {
         />
       </a>
       <div className={`nav__links ${menuClass}`}>
-        <Link className="nav__links-nav" to="/characters">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "nav__links-nav active" : "nav__links-nav"
+          }
+          to="/characters"
+        >
           Characters
-        </Link>
-        <Link className="nav__links-nav" to="/locations">
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "nav__links-nav active" : "nav__links-nav"
+          }
+          to="/locations"
+        >
           Locations
-        </Link>
-        <Link className="nav__links-nav" to="/episodes">
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "nav__links-nav active" : "nav__links-nav"
+          }
+          to="/episodes"
+        >
           Episodes
-        </Link>
+        </NavLink>
       </div>
 
       <div className="nav__hamburger-icon">
@@ -54,7 +69,7 @@ const Navbar = () => {
           <AiOutlineClose onClick={handleHamburger} />
         )}
       </div>
-    </div>
+    </nav>
   );
 };
 

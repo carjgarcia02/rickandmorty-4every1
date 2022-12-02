@@ -2,11 +2,10 @@ import HeroImage from "../assets/images/hero.jpg";
 
 const Hero = () => {
   return (
-    <div className="hero">
+    <section className="hero">
       <div className="hero__info">
         <h2>
-          Welcome to my <span className="hero__name">Rick and Morty</span>{" "}
-          webpage!
+          Welcome to my <span className="hero__name"><a href="https://en.wikipedia.org/wiki/Rick_and_Morty" target="_blank">Rick and Morty</a></span> webpage!
         </h2>
         <h2>
           Feel free to look around and <br />
@@ -24,7 +23,7 @@ const Hero = () => {
         </p>
       </div>
       <img className="hero__image" src={HeroImage} alt="" />
-    </div>
+    </section>
   );
 };
 

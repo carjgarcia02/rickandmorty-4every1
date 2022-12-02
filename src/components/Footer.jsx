@@ -4,7 +4,7 @@ import { AiOutlineCopyrightCircle } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="footer" id="footer">
+    <footer className="footer" id="footer">
       <div className="footer__divider">
         <div className="footer__info">
           <h2>Links of interest</h2>
@@ -59,7 +59,7 @@ const Footer = () => {
           2022 <b>Carlos García Rosas</b> - All Rights Reserved.
         </p>
       </div>
-    </div>
+    </footer>
   );
 };
 

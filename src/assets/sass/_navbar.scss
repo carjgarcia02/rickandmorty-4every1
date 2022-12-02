@@ -32,9 +32,6 @@
       color: $custom-black;
       cursor: pointer;
     }
-    &-nav:hover {
-      background-color: $green-rick;
-    }
   }
   &__hamburger-menu {
     color: yellow;
@@ -44,6 +41,8 @@
     display: none;
     user-select: none;
   }
+  .active {
+    background-color: $green-rick;
+    color: $custom-white;
+  }
 }
-
-
