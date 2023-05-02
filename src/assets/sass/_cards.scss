@@ -21,6 +21,15 @@
   &:hover {
     transform: scale(1.05);
   }
+  &__image {
+    width: 200px;
+    height: 180px;
+  }
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    
+  }
 }
 
 .main {

@@ -15,7 +15,6 @@
       color: $custom-white;
     }
     a:hover {
-      color: $custom-orange;
       text-decoration: underline;
     }
     a:visited {
@@ -33,9 +32,9 @@
       &__icon {
         font-size: 1.5em;
         color: $custom-white;
-      }
-      &__icon:hover {
-        color: $custom-orange;
+        :hover {
+          color: #ffcc00;
+        }
       }
     }
   }

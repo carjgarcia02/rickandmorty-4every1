@@ -40,7 +40,6 @@ const Characters = () => {
             status={item.status}
             species={item.species}
             gender={item.gender}
-            location={item.location.name}
           />
         ))}
       </div>

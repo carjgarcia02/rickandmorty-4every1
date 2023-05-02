@@ -4,9 +4,18 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero__info">
-        <h2>
-          Welcome to my <span className="hero__name"><a href="https://en.wikipedia.org/wiki/Rick_and_Morty" target="_blank">Rick and Morty</a></span> webpages!
-        </h2>
+        <h1>
+          Welcome to my{" "}
+          <span className="hero__name">
+            <a
+              href="https://en.wikipedia.org/wiki/Rick_and_Morty"
+              target="_blank"
+            >
+              Rick and Morty
+            </a>
+          </span>{" "}
+          app!
+        </h1>
         <h2>
           Feel free to look around and <br />
           learn more about the show.
