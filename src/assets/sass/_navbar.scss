@@ -1,48 +1,97 @@
-.nav {
-  height: 80px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
+header {
   position: relative;
+  padding: 0 2rem;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   &__image {
-    width: 160px;
-    height: 55px;
-    cursor: pointer;
-    transition: 100ms;
-    user-select: none;
-  }
-  &__image:hover {
-    transform: scale(1.1);
+    width: 100px;
+    height: 35px;
   }
   &__links {
     display: flex;
-    gap: 20px;
-    font-size: 1.6vw;
+    gap: 2rem;
     font-weight: bold;
-    height: 100%;
-    user-select: none;
-    &-nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      padding: 0 8px;
+    li {
+      font-size: 1rem;
       color: $custom-black;
-      cursor: pointer;
+      :visited {
+        color: $custom-black;
+      }
     }
   }
-  &__hamburger-menu {
-    color: yellow;
-  }
-  &__hamburger-icon {
+  &__logo {
     cursor: pointer;
-    display: none;
+    transition: 0.2s;
     user-select: none;
   }
-  .active {
-    background-color: $green-rick;
-    color: $custom-white;
+  &__logo:hover {
+    transform: scale(1.05);
   }
+  &__toggleBtn {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+}
+
+.actionBtn {
+  background-color: rgb(255, 140, 0);
+  color: $custom-white;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2s ease-in;
+  &:hover {
+    background-color: $custom-orange;
+    scale: 1.05;
+  }
+  &:active {
+    scale: 0.95;
+  }
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu {
+  height: 0;
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 2;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  li {
+    padding: 0.7rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .actionBtn {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    padding: 0.7rem;
+    margin: auto;
+  }
+}
+
+.dropdown_menu.open {
+  height: 175px;
+  display: block;
 }

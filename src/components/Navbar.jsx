@@ -3,73 +3,86 @@ import { NavLink } from "react-router-dom";
 // Navbar logo
 import RickMortyLogo from "../assets/images/Rick_and_Morty.svg";
 // Icons
-import { GiHamburgerMenu } from "react-icons/gi";
+import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 // Hooks
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const [menuClass, setMenuClass] = useState("hidden");
+  const [open, setOpen] = useState("");
 
-  const handleHamburger = () => {
-    if (isClicked) {
-      setMenuClass("");
-      setIsClicked(!isClicked);
+  const handleHamburgerMenu = () => {
+    if (isClicked === false) {
+      setIsClicked(true);
+      setOpen("open");
     } else {
-      setMenuClass("hidden");
-      setIsClicked(!isClicked);
+      setIsClicked(false);
+      setOpen("");
     }
   };
 
-  useEffect(() => {
-    handleHamburger();
-  }, []);
-
   return (
-    <nav className="nav">
-      <a href="https://en.wikipedia.org/wiki/Rick_and_Morty" target="_blank">
-        <img
-          className="nav__image"
-          src={RickMortyLogo}
-          alt="Rick and Morty logo"
-        />
-      </a>
-      <div className={`nav__links ${menuClass}`}>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "nav__links-nav active" : "nav__links-nav"
-          }
-          to="/characters"
+    <header>
+      <nav className="navbar">
+        <div className="navbar__logo">
+          <a
+            href="https://en.wikipedia.org/wiki/Rick_and_Morty"
+            target="_blank"
+          >
+            <img
+              className="navbar__image"
+              src={RickMortyLogo}
+              alt="Rick and Morty logo"
+            />
+          </a>
+        </div>
+        <ul className="navbar__links">
+          <li>
+            <NavLink to="/characters">Characters</NavLink>
+          </li>
+          <li>
+            <NavLink to="/locations">Locations</NavLink>
+          </li>
+          <li>
+            <NavLink to="/episodes">Episodes</NavLink>
+          </li>
+        </ul>
+        <a
+          href="https://www.adultswim.com/videos/rick-and-morty"
+          className="actionBtn"
         >
-          Characters
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "nav__links-nav active" : "nav__links-nav"
-          }
-          to="/locations"
-        >
-          Locations
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "nav__links-nav active" : "nav__links-nav"
-          }
-          to="/episodes"
-        >
-          Episodes
-        </NavLink>
-      </div>
+          Watch Online
+        </a>
+        <div className="navbar__toggleBtn">
+          <i>
+            {isClicked ? (
+              <AiOutlineClose onClick={handleHamburgerMenu} />
+            ) : (
+              <FiMenu onClick={handleHamburgerMenu} />
+            )}
+          </i>
+        </div>
+      </nav>
 
-      <div className="nav__hamburger-icon">
-        {isClicked ? (
-          <GiHamburgerMenu onClick={handleHamburger} />
-        ) : (
-          <AiOutlineClose onClick={handleHamburger} />
-        )}
+      <div className={`dropdown_menu ${open}`}>
+        <li>
+          <NavLink to="/characters">Characters</NavLink>
+        </li>
+        <li>
+          <NavLink to="/locations">Locations</NavLink>
+        </li>
+        <li>
+          <NavLink to="/episodes">Episodes</NavLink>
+        </li>
+        <a
+          href="https://www.adultswim.com/videos/rick-and-morty"
+          className="actionBtn"
+        >
+          Watch Online
+        </a>
       </div>
-    </nav>
+    </header>
   );
 };
 

@@ -1,9 +1,12 @@
-const CharacterCard = ({ image, name, status, species, gender, location }) => {
+const CharacterCard = ({ image, name, status, species, gender }) => {
   return (
     <div className="card">
+      <div className="card__header">
+        
+      </div>
       <div className="card__body">
-        <img className="card_image" src={image} alt="Character Image" />
         <h3 className="card__title">{name}</h3>
+        <img className="card__image" src={image} alt="Character Image" />
         <p className="card__text">
           <b>Status:</b> {status}
         </p>
@@ -12,9 +15,6 @@ const CharacterCard = ({ image, name, status, species, gender, location }) => {
         </p>
         <p className="card__text">
           <b>Gender:</b> {gender}
-        </p>
-        <p className="card__text">
-          <b>Location:</b> {location}
         </p>
       </div>
     </div>
