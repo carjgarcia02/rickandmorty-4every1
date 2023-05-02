@@ -51,6 +51,7 @@ const Navbar = () => {
         <a
           href="https://www.adultswim.com/videos/rick-and-morty"
           className="actionBtn"
+          target="_blank"
         >
           Watch Online
         </a>
@@ -78,6 +79,7 @@ const Navbar = () => {
         <a
           href="https://www.adultswim.com/videos/rick-and-morty"
           className="actionBtn"
+          target="_blank"
         >
           Watch Online
         </a>

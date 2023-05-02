@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .navbar {
     &__logo {
       width: 80px;
@@ -25,9 +25,46 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .dropdown_menu.open {
     height: 0;
     display: none;
+  }
+  .hero {
+    font-size: 0.9rem;
+    flex-direction: row;
+    &__image {
+      width: 270px;
+      height: 180px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    font-size: 1.2rem;
+    flex-direction: row;
+    &__image {
+      width: 300px;
+      height: 200px;
+    }
+  }
+  .pages {
+    font-size: 16px;
+    &__number {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    font-size: 1.4rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+    &__image {
+      width: 360px;
+      height: 240px;
+    }
   }
 }

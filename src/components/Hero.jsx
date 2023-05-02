@@ -1,4 +1,4 @@
-import HeroImage from "../assets/images/hero.jpg";
+import HeroImage from "../assets/images/hero-rnm.png";
 
 const Hero = () => {
   return (
@@ -20,8 +20,8 @@ const Hero = () => {
           Feel free to look around and <br />
           learn more about the show.
         </h2>
-        <p>Season 7 is coming!</p>
-        <p>
+        <h3>
+          Read about the{" "}
           <a
             className="hero__link"
             href="https://www.inverse.com/entertainment/rick-morty-season-6-episode-7-release-date-time-plot-cast-trailer-for-adult-swims-sci-fi-show"
@@ -29,7 +29,7 @@ const Hero = () => {
           >
             Latest News
           </a>
-        </p>
+        </h3>
       </div>
       <img className="hero__image" src={HeroImage} alt="" />
     </section>
