@@ -1,4 +1,4 @@
-import EpisodeImage from "../../assets/images/episode_image.jpg";
+import EpisodeImage from "../assets/images/episode_image.jpg";
 
 const EpisodeCard = ({ name, air_date, episode }) => {
   return (

@@ -1,5 +1,4 @@
 .hero {
-  width: 100vw;
   height: 476px;
   padding-top: 5%;
   background-size: cover;
@@ -19,8 +18,8 @@
   }
   &__link {
     background-color: green;
-    width: 150px;
-    height: 30px;
+    width: 140px;
+    height: 28px;
     color: white;
     font-size: 0.7rem;
     border-radius: 40px;
@@ -30,5 +29,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+      background-color: #84bfbd;
+    }
   }
 }

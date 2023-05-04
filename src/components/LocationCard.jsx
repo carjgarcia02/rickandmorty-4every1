@@ -1,4 +1,4 @@
-import LocationImage from "../../assets/images/location_image.jpg";
+import LocationImage from "../assets/images/location_image.jpg";
 
 const LocationCard = ({ name, type, dimension }) => {
   return (

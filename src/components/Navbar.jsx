@@ -7,10 +7,14 @@ import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 // Hooks
 import { useState } from "react";
+import { useContext } from "react";
+import { rickMortyContext } from "../context/rickMortyContext";
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [open, setOpen] = useState("");
+  const { setCharacter, setEpisode, setLocation } =
+    useContext(rickMortyContext);
 
   const handleHamburgerMenu = () => {
     if (isClicked === false) {
@@ -39,13 +43,15 @@ const Navbar = () => {
         </div>
         <ul className="navbar__links">
           <li>
-            <NavLink to="/characters">Characters</NavLink>
+            <NavLink to="/results" onClick={() => setCharacter()}>
+              Characters
+            </NavLink>
           </li>
-          <li>
-            <NavLink to="/locations">Locations</NavLink>
+          <li onClick={() => setLocation()}>
+            <NavLink to="/results">Locations</NavLink>
           </li>
-          <li>
-            <NavLink to="/episodes">Episodes</NavLink>
+          <li onClick={() => setEpisode()}>
+            <NavLink to="/results">Episodes</NavLink>
           </li>
         </ul>
         <a

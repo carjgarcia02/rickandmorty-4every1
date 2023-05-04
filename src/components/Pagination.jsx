@@ -1,7 +1,7 @@
-const Pagination = ({ totalPages, changePage }) => {
-  const createOptions = (totalPages) => {
+const Pagination = ({ pages, changePage }) => {
+  const createOptions = (pages) => {
     let options = [];
-    for (let i = 1; i <= totalPages; i++) {
+    for (let i = 1; i <= pages; i++) {
       options.push(
         <option key={i} value={i}>
           {i}
@@ -14,15 +14,15 @@ const Pagination = ({ totalPages, changePage }) => {
   return (
     <>
       <div className="pages">
-        <span className="pages__title">Page # </span>
-        <select
+        <p className="pages__title">Page # <select
           className="pages__number"
           name="pages"
           id="pages"
           onChange={changePage}
         >
-          {createOptions(totalPages).map((item) => item)}
-        </select>
+          {createOptions(pages).map((item) => item)}
+        </select></p>
+        
       </div>
     </>
   );
