@@ -1,6 +1,7 @@
 //Components
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Pagination from "./components/Pagination";
 import Results from "./components/Results";
 import Footer from "./components/Footer";
 
@@ -16,13 +17,12 @@ const App = () => {
       <div className="App">
         <Navbar />
         <Hero />
-        <main className="main">
-          <Routes>
-            <Route path="/" element={<Results />} />
-            <Route path="/results" element={<Results />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </main>
+        <Pagination />
+        <Routes>
+          <Route path="/" element={<Results />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
         <Footer />
       </div>
     </RickMortyState>

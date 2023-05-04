@@ -1,5 +1,9 @@
-const Pagination = ({ pages, changePage }) => {
-  const createOptions = (pages) => {
+import useFetch from "../hooks/useFetch";
+
+const Pagination = () => {
+  const { pages, changePage } = useFetch();
+
+  const createOptions = () => {
     let options = [];
     for (let i = 1; i <= pages; i++) {
       options.push(
@@ -14,15 +18,17 @@ const Pagination = ({ pages, changePage }) => {
   return (
     <>
       <div className="pages">
-        <p className="pages__title">Page # <select
-          className="pages__number"
-          name="pages"
-          id="pages"
-          onChange={changePage}
-        >
-          {createOptions(pages).map((item) => item)}
-        </select></p>
-        
+        <p className="pages__title">
+          Page #{" "}
+          <select
+            className="pages__number"
+            name="pages"
+            id="pages"
+            onChange={changePage}
+          >
+            {createOptions(pages).map((item) => item)}
+          </select>
+        </p>
       </div>
     </>
   );

@@ -56,7 +56,7 @@ const Footer = () => {
       <div className="copyright">
         <p className="copyright__msg">
           Copyright <AiOutlineCopyrightCircle className="copyright__logo" />{" "}
-          2022 <b>Carlos García Rosas</b> - All Rights Reserved.
+          2023 <b>Carlos García Rosas</b> - All Rights Reserved.
         </p>
       </div>
     </footer>
