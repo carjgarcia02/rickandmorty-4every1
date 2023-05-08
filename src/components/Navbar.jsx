@@ -44,10 +44,8 @@ const Navbar = () => {
           </a>
         </div>
         <ul className="navbar__links">
-          <li>
-            <NavLink to="/results" onClick={() => setCharacter()}>
-              Characters
-            </NavLink>
+          <li onClick={() => setCharacter()}>
+            <NavLink to="/results">Characters</NavLink>
           </li>
           <li onClick={() => setLocation()}>
             <NavLink to="/results">Locations</NavLink>
@@ -60,6 +58,7 @@ const Navbar = () => {
         <a
           href="https://www.adultswim.com/videos/rick-and-morty"
           className="actionBtn"
+          target="_blank"
         >
           Watch Online
         </a>
@@ -75,18 +74,21 @@ const Navbar = () => {
       </nav>
 
       <div className={`dropdown_menu ${open}`}>
-        <li>
-          <NavLink to="/characters">Characters</NavLink>
-        </li>
-        <li>
-          <NavLink to="/locations">Locations</NavLink>
-        </li>
-        <li>
-          <NavLink to="/episodes">Episodes</NavLink>
-        </li>
+        <ul>
+          <li onClick={() => setCharacter()}>
+            <NavLink to="/results">Characters</NavLink>
+          </li>
+          <li onClick={() => setLocation()}>
+            <NavLink to="/results">Locations</NavLink>
+          </li>
+          <li onClick={() => setEpisode()}>
+            <NavLink to="/results">Episodes</NavLink>
+          </li>
+        </ul>
         <a
           href="https://www.adultswim.com/videos/rick-and-morty"
           className="actionBtn"
+          target="_blank"
         >
           Watch Online
         </a>

@@ -14,6 +14,18 @@
         }
       }
     }
+    .dropdown_menu {
+      background-color: var(--dark-color);
+      a {
+        color: var(--light-color);
+        &:visited {
+          color: var(--light-color);
+        }
+        &:hover {
+          color: #ff4f00;
+        }
+      }
+    }
   }
   .pages {
     background-color: var(--dark-color);

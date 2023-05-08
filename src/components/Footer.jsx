@@ -29,17 +29,20 @@ const Footer = () => {
                 <BsLinkedin />
               </i>
             </a>
-            <a href="#footer" target="_blank">
+            <a href="https://www.gmail.com/" target="_blank">
               <i className="icons__icon">
                 <GrMail />
               </i>
             </a>
-            <a href="https://github.com/carjgarcia02" target="_blank">
+            <a href="https://github.com/carjgarcia02/" target="_blank">
               <i className="icons__icon">
                 <BsGithub />
               </i>
             </a>
-            <a href="#footer" target="_blank">
+            <a
+              href="https://www.facebook.com/carlos.garciarosas/"
+              target="_blank"
+            >
               <i className="icons__icon">
                 <BsFacebook />
               </i>

@@ -90,6 +90,7 @@ header {
   }
 }
 
+/* Modifies the Dark Mode button specifically*/
 .darkmode {
   background-color: var(--dark-color);
   color: var(--light-color);
@@ -131,9 +132,20 @@ header {
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   li {
     padding: 0.7rem 2rem;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
+    a {
+      font-size: 1rem;
+      color: #26354b;
+      &:visited {
+        color: #26354b;
+      }
+      &:hover {
+        color: #ff4f00;
+      }
+    }
   }
   .actionBtn {
     width: 90%;
