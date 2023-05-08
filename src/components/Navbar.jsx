@@ -9,6 +9,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import { useContext } from "react";
 import { rickMortyContext } from "../context/rickMortyContext";
+//Dark Mode
+import DarkModeBtn from "./DarkModeBtn";
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -54,6 +56,7 @@ const Navbar = () => {
             <NavLink to="/results">Episodes</NavLink>
           </li>
         </ul>
+        <DarkModeBtn />
         <a
           href="https://www.adultswim.com/videos/rick-and-morty"
           className="actionBtn"

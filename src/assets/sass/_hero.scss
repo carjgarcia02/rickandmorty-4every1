@@ -4,7 +4,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  color: $custom-white;
+  color: var(--light-color);
   display: flex;
   text-align: center;
   justify-content: center;
@@ -20,7 +20,7 @@
     background-color: #217f31;
     width: 140px;
     height: 28px;
-    color: white;
+    color: var(--light-color);
     font-size: 0.7rem;
     border-radius: 40px;
     padding: 6px 10px;
@@ -29,9 +29,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     &:hover {
-      background-color: #72cefa;
+      background-color: #5bb747;
     }
   }
 }

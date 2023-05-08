@@ -16,7 +16,7 @@ const Pagination = () => {
   };
 
   return (
-    <>
+
       <div className="pages">
         <p className="pages__title">
           Page #{" "}
@@ -30,7 +30,7 @@ const Pagination = () => {
           </select>
         </p>
       </div>
-    </>
+
   );
 };
 

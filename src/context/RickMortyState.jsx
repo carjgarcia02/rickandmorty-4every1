@@ -2,6 +2,7 @@ import { useState } from "react";
 import { rickMortyContext } from "./rickMortyContext";
 
 const RickMortyState = ({ children }) => {
+  /* SEARCH RESULTS */
   const [view, setView] = useState("character");
 
   const setCharacter = () => {

@@ -5,47 +5,41 @@ import { AiOutlineCopyrightCircle } from "react-icons/ai";
 const Footer = () => {
   return (
     <footer className="footer" id="footer">
-      <div className="footer__divider">
-        <div className="footer__info">
+      <div className="footer__section">
+        <div className="footer__section-interests">
           <h2>Links of interest</h2>
-          <p>
-            <a
-              href="https://www.adultswim.com/videos/rick-and-morty"
-              target="_blank"
-            >
-              Watch in HBO Max
-            </a>
-          </p>
-          <p>
-            <a href="https://rickandmortyshop.com/" target="_blank">
-              Rick and Morty Online Shop
-            </a>
-          </p>
-          <p>
-            <a href="https://rickandmortyapi.com/" target="_blank">
-              Rick and Morty API
-            </a>
-          </p>
+          <a
+            href="https://www.adultswim.com/videos/rick-and-morty"
+            target="_blank"
+          >
+            Watch in HBO Max
+          </a>
+          <a href="https://rickandmortyshop.com/" target="_blank">
+            Rick and Morty Online Shop
+          </a>
+          <a href="https://rickandmortyapi.com/" target="_blank">
+            Rick and Morty API
+          </a>
         </div>
-        <div className="footer__contact">
+        <div className="footer__section-social">
           <h2>Contact</h2>
           <div className="icons">
-            <a href="#footer">
+            <a href="https://www.linkedin.com/in/cgarcia02/" target="_blank">
               <i className="icons__icon">
                 <BsLinkedin />
               </i>
             </a>
-            <a href="#footer">
+            <a href="#footer" target="_blank">
               <i className="icons__icon">
                 <GrMail />
               </i>
             </a>
-            <a href="#footer">
+            <a href="https://github.com/carjgarcia02" target="_blank">
               <i className="icons__icon">
                 <BsGithub />
               </i>
             </a>
-            <a href="#footer">
+            <a href="#footer" target="_blank">
               <i className="icons__icon">
                 <BsFacebook />
               </i>

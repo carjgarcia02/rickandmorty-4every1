@@ -1,0 +1,41 @@
+#dark {
+  header {
+    background-color: var(--dark-color);
+    .navbar {
+      &__links {
+        a {
+          color: var(--light-color);
+          &:visited {
+            color: var(--light-color);
+          }
+          &:hover {
+            color: #ff4f00;
+          }
+        }
+      }
+    }
+  }
+  .pages {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+  }
+  main {
+    background-color: black;
+  }
+  .footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    &__section {
+      &-social {
+        .icons {
+          &__icon {
+            color: var(--light-color);
+            :hover {
+              color: #006097;
+            }
+          }
+        }
+      }
+    }
+  }
+}
