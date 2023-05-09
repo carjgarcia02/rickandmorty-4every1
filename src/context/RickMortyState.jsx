@@ -7,14 +7,23 @@ const RickMortyState = ({ children }) => {
   const [data, setData] = useState([]);
   const [pages, setPages] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loadData, setLoadData] = useState(false);
+
+  /* URL */
+  let url = `https://rickandmortyapi.com/api/${view}/?page=${currentPage}`;
 
   const fetchData = async () => {
-    let url = `https://rickandmortyapi.com/api/${view}/?page=${currentPage}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    setData(data.results);
-    setPages(data.info.pages);
-    console.log(data);
+    try {
+      setLoadData(true);
+      const response = await fetch(url);
+      const data = await response.json();
+      setData(data.results);
+      setPages(data.info.pages);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoadData(false);
+    }
   };
 
   useEffect(() => {
@@ -22,14 +31,17 @@ const RickMortyState = ({ children }) => {
   }, [currentPage, view]);
 
   const setCharacter = () => {
+    setCurrentPage(1);
     setView('character');
   };
 
   const setEpisode = () => {
+    setCurrentPage(1);
     setView('episode');
   };
 
   const setLocation = () => {
+    setCurrentPage(1);
     setView('location');
   };
 
@@ -44,10 +56,12 @@ const RickMortyState = ({ children }) => {
         view,
         data,
         pages,
+        loadData,
         setCharacter,
         setEpisode,
         setLocation,
-        handlePages
+        handlePages,
+        setLoadData,
       }}
     >
       {children}
