@@ -13,6 +13,9 @@
           }
         }
       }
+      &__toggleBtn {
+        color: var(--light-color);
+      }
     }
     .dropdown_menu {
       background-color: var(--dark-color);
@@ -30,6 +33,10 @@
   .pages {
     background-color: var(--dark-color);
     color: var(--light-color);
+    &__number {
+      background-color: black;
+      color: var(--light-color);
+    }
   }
   main {
     background-color: black;
@@ -43,7 +50,7 @@
           &__icon {
             color: var(--light-color);
             :hover {
-              color: #006097;
+              color: #6fbbd3;
             }
           }
         }

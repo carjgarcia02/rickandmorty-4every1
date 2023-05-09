@@ -1,13 +1,16 @@
-import useFetch from "../hooks/useFetch";
+import { useContext } from 'react';
+import { rickMortyContext } from '../context/rickMortyContext';
 
 const Pagination = () => {
-  const { pages, changePage } = useFetch();
+  const { pages, currentPage, handlePages } = useContext(rickMortyContext);
 
   const createOptions = () => {
-    let options = [];
+    const options = [];
     for (let i = 1; i <= pages; i++) {
       options.push(
-        <option key={i} value={i}>
+        <option key={i}>
+          {' '}
+          {/* There was a key and value before, both equal to i */}
           {i}
         </option>
       );
@@ -16,21 +19,20 @@ const Pagination = () => {
   };
 
   return (
-
-      <div className="pages">
-        <p className="pages__title">
-          Page #{" "}
-          <select
-            className="pages__number"
-            name="pages"
-            id="pages"
-            onChange={changePage}
-          >
-            {createOptions(pages).map((item) => item)}
-          </select>
-        </p>
-      </div>
-
+    <div className='pages'>
+      <p className='pages__title'>
+        Page #{' '}
+        <select
+          className='pages__number'
+          name='pages'
+          id='pages'
+          onChange={handlePages}
+          value={currentPage}
+        >
+          {createOptions(pages).map((item) => item)}
+        </select>
+      </p>
+    </div>
   );
 };
 

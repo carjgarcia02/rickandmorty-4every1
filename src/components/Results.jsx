@@ -1,15 +1,16 @@
-import useFetch from "../hooks/useFetch";
-import CharacterCard from "./CharacterCard";
-import LocationCard from "./LocationCard";
-import EpisodeCard from "./EpisodeCard";
+import CharacterCard from './CharacterCard';
+import LocationCard from './LocationCard';
+import EpisodeCard from './EpisodeCard';
+import { useContext } from 'react';
+import { rickMortyContext } from '../context/rickMortyContext';
 
 const Results = () => {
-  const { view, data } = useFetch();
+  const { view, data } = useContext(rickMortyContext);
 
-  if (view === "character") {
+  if (view === 'character') {
     return (
-      <main className="main">
-        <div className="card-container">
+      <main className='main'>
+        <div className='card-container'>
           {data.map((item) => (
             <CharacterCard
               key={`character-${item.id}`}
@@ -23,10 +24,10 @@ const Results = () => {
         </div>
       </main>
     );
-  } else if (view === "location") {
+  } else if (view === 'location') {
     return (
-      <main className="main">
-        <div className="card-container">
+      <main className='main'>
+        <div className='card-container'>
           {data.map((item) => (
             <LocationCard
               key={`location-${item.id}`}
@@ -38,10 +39,10 @@ const Results = () => {
         </div>
       </main>
     );
-  } else if (view === "episode") {
+  } else if (view === 'episode') {
     return (
-      <main className="main">
-        <div className="card-container">
+      <main className='main'>
+        <div className='card-container'>
           {data.map((item) => (
             <EpisodeCard
               key={`episode-${item.id}`}
