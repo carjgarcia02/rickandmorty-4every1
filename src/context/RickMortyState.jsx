@@ -3,11 +3,19 @@ import { rickMortyContext } from './rickMortyContext';
 
 const RickMortyState = ({ children }) => {
   /* SEARCH RESULTS */
-  const [view, setView] = useState('character');
+  const loadedView = localStorage.getItem('view')
+    ? JSON.parse(localStorage.getItem('view'))
+    : 'character'; // Load view from local storage.
+
+  const [view, setView] = useState(loadedView); //updated from LS
   const [data, setData] = useState([]);
   const [pages, setPages] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const [loadData, setLoadData] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('view', JSON.stringify(view));
+  }, [view]);
 
   /* URL */
   let url = `https://rickandmortyapi.com/api/${view}/?page=${currentPage}`;

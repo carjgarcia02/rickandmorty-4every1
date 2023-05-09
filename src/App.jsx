@@ -17,17 +17,27 @@ export const ThemeContext = createContext(null);
 
 const App = () => {
   /* Dark Mode */
-  const [theme, setTheme] = useState('light');
+  const loadedTheme = localStorage.getItem('theme')
+    ? JSON.parse(localStorage.getItem('theme'))
+    : 'light'; // Load theme from local storage.
+
+  const [theme, setTheme] = useState(loadedTheme); //updated
   const toggleTheme = () => {
     setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
   };
+
+  /* Every time theme changes, it is stored in the local storage */
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(theme));
+  }, [theme]);
+
   /* First Time Loader */
   const [initialLoader, setInitialLoader] = useState(false);
   useEffect(() => {
     setInitialLoader(true);
     setTimeout(() => {
       setInitialLoader(false);
-    }, 2500);
+    }, 1500);
   }, []);
 
   return (
