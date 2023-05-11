@@ -1,10 +1,9 @@
-import CharacterCard from './CharacterCard';
-import LocationCard from './LocationCard';
-import EpisodeCard from './EpisodeCard';
 import { useContext } from 'react';
 import { rickMortyContext } from '../context/rickMortyContext';
-
 import DataLoader from './DataLoader';
+import Characters from './Characters';
+import Locations from './Locations';
+import Episodes from './Episodes';
 
 const Results = () => {
   const { view, data, loading } = useContext(rickMortyContext);
@@ -12,60 +11,22 @@ const Results = () => {
   if (view === 'character') {
     return (
       <main className='main'>
-        {loading ? (
-          <DataLoader />
-        ) : (
-          <div className='card-container'>
-            {data.map((item) => (
-              <CharacterCard
-                key={`character-${item.id}`}
-                image={item.image}
-                name={item.name}
-                status={item.status}
-                species={item.species}
-                gender={item.gender}
-              />
-            ))}
-          </div>
-        )}
+        {loading && <DataLoader />}
+        {data && <Characters data={data} />}
       </main>
     );
   } else if (view === 'location') {
     return (
       <main className='main'>
-        {loading ? (
-          <DataLoader />
-        ) : (
-          <div className='card-container'>
-            {data.map((item) => (
-              <LocationCard
-                key={`location-${item.id}`}
-                name={item.name}
-                type={item.type}
-                dimension={item.dimension}
-              />
-            ))}
-          </div>
-        )}
+        {loading && <DataLoader />}
+        {data && <Locations data={data} />}
       </main>
     );
   } else if (view === 'episode') {
     return (
       <main className='main'>
-        {loading ? (
-          <DataLoader />
-        ) : (
-          <div className='card-container'>
-            {data.map((item) => (
-              <EpisodeCard
-                key={`episode-${item.id}`}
-                name={item.name}
-                air_date={item.air_date}
-                episode={item.episode}
-              />
-            ))}
-          </div>
-        )}
+        {loading && <DataLoader />}
+        {data && <Episodes data={data} />}
       </main>
     );
   }
