@@ -49,6 +49,9 @@
     .paginationBttns {
       font-size: 14px;
     }
+    & a {
+      margin: 6px;
+    }
   }
   .footer {
     font-size: 1rem;
@@ -84,6 +87,9 @@
   .pagination {
     .paginationBttns {
       font-size: 16px;
+    }
+    & a {
+      margin: 10px;
     }
   }
   .card {
