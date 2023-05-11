@@ -30,13 +30,21 @@
       }
     }
   }
-  .pages {
+  .pagination {
     background-color: var(--dark-color);
-    color: var(--light-color);
-    &__number {
-      background-color: black;
-      color: var(--light-color);
+    & a {
+      border: 1px solid #ffcc00;
+      color: #ffcc00;
+      cursor: pointer;
+      &:hover {
+        color: var(--dark-color);
+        background-color: #ffcc00;
+      }
     }
+  }
+  .paginationActive a {
+    color: var(--dark-color);
+    background-color: #ffcc00;
   }
   main {
     background-color: black;
@@ -53,7 +61,7 @@
               color: var(--light-color);
             }
             &:hover {
-              color: #eed811;
+              color: #ffcc00;
             }
           }
         }

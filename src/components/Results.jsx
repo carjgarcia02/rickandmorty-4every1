@@ -7,12 +7,12 @@ import { rickMortyContext } from '../context/rickMortyContext';
 import DataLoader from './DataLoader';
 
 const Results = () => {
-  const { view, data, loadData } = useContext(rickMortyContext);
+  const { view, data, loading } = useContext(rickMortyContext);
 
   if (view === 'character') {
     return (
       <main className='main'>
-        {loadData ? (
+        {loading ? (
           <DataLoader />
         ) : (
           <div className='card-container'>
@@ -33,7 +33,7 @@ const Results = () => {
   } else if (view === 'location') {
     return (
       <main className='main'>
-        {loadData ? (
+        {loading ? (
           <DataLoader />
         ) : (
           <div className='card-container'>
@@ -52,7 +52,7 @@ const Results = () => {
   } else if (view === 'episode') {
     return (
       <main className='main'>
-        {loadData ? (
+        {loading ? (
           <DataLoader />
         ) : (
           <div className='card-container'>

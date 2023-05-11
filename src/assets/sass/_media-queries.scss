@@ -45,11 +45,8 @@
     justify-content: flex-start;
     align-items: center;
   }
-  .pages {
-    font-size: 1rem;
-    &__number {
-      font-size: 1.4rem;
-    }
+  .pagination {
+    font-size: 14px;
   }
   .footer {
     font-size: 1rem;
@@ -81,6 +78,9 @@
       font-size: 1rem;
       margin-top: 20px;
     }
+  }
+  .pagination {
+    font-size: 1rem;
   }
   .card {
     width: 280px;
