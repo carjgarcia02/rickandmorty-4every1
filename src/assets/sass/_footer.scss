@@ -10,6 +10,7 @@
     &-interests {
       a {
         display: block;
+        color: var(--footer-links);
         &:visited {
           color: var(--footer-links);
         }
@@ -31,11 +32,12 @@
         a {
           font-size: 1.5em;
           transition: 0.3s ease;
+          color: var(--dark-color);
           &:visited {
             color: var(--dark-color);
           }
           &:hover {
-            color: green;
+            color: #217f31;
             transform: scale(1.3);
           }
         }
@@ -43,7 +45,6 @@
     }
   }
 }
-
 .copyright {
   &__msg {
     padding: 12px 0;

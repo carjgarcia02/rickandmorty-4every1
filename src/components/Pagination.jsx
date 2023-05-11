@@ -8,7 +8,7 @@ const Pagination = () => {
   return (
     <div className='pagination'>
       <ReactPaginate
-        previousLabel={'Previous'}
+        previousLabel={'Prev'}
         nextLabel={'Next'}
         pageCount={pageCount}
         onPageChange={changePage}
