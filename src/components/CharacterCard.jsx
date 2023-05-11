@@ -8,7 +8,6 @@ const CharacterCard = ({ image, name, status, species, gender }) => {
         ) : status === 'Dead' ? (
           <div className='status__circle-red'></div>
         ) : null}
-
         <p className='status__text'>{status}</p>
       </div>
 

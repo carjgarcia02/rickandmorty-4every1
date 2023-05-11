@@ -47,10 +47,13 @@
     &__section {
       &-social {
         .icons {
-          &__icon {
-            color: var(--light-color);
-            :hover {
-              color: #6fbbd3;
+          a {
+            font-size: 1.5em;
+            &:visited {
+              color: var(--light-color);
+            }
+            &:hover {
+              color: #eed811;
             }
           }
         }

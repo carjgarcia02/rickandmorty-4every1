@@ -10,12 +10,13 @@
     &-interests {
       a {
         display: block;
-        &:hover {
-          color: #6fbbd3 !important;
-          text-decoration: underline;
-        }
         &:visited {
           color: var(--footer-links);
+        }
+        &:hover {
+          color: #ff4f00;
+          font-weight: bold;
+          text-decoration: underline;
         }
       }
     }
@@ -27,11 +28,15 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        &__icon {
+        a {
           font-size: 1.5em;
-          color: black;
-          :hover {
-            color: red;
+          transition: 0.3s ease;
+          &:visited {
+            color: var(--dark-color);
+          }
+          &:hover {
+            color: green;
+            transform: scale(1.3);
           }
         }
       }
