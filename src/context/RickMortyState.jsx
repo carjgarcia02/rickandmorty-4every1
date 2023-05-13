@@ -55,19 +55,16 @@ const RickMortyState = ({ children }) => {
   const setCharacter = () => {
     setCurrentPage(0);
     setView('character');
-    scrollToResults();
   };
 
   const setEpisode = () => {
     setCurrentPage(0);
     setView('episode');
-    scrollToResults();
   };
 
   const setLocation = () => {
     setCurrentPage(0);
     setView('location');
-    scrollToResults();
   };
 
   return (
