@@ -138,8 +138,24 @@
     }
   }
   .card {
-    width: 240px;
-    height: 320px;
+    width: 280px;
+    height: 360px;
+    &__back {
+      width: 280px;
+      height: 360px;
+      background-image: url('../images/card_back_280x360.jpg');
+      font-size: 12px;
+      padding: 18px;
+      .firstSeen,
+      .debut {
+        margin-bottom: 14px;
+      }
+      .learnMore {
+        width: 160px;
+
+        font-size: 16px;
+      }
+    }
     &-container {
       gap: 32px;
       padding: 50px 0;

@@ -13,14 +13,18 @@ const CharacterCard = ({
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleClick = (e) => {
+  const flipCard = (e) => {
     e.preventDefault();
     setIsFlipped(!isFlipped);
   };
 
+  const learnMore = (e) => {
+    e.stopPropagation();
+  };
+
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection='horizontal'>
-      <div className='card' key='front' onClick={handleClick}>
+      <div className='card' key='front' onClick={flipCard}>
         <div className='status'>
           {/* Sets a circle color according to status. */}
           {status === 'Alive' ? (
@@ -41,17 +45,20 @@ const CharacterCard = ({
         </div>
       </div>
 
-      <div className='card__back' key='back' onClick={handleClick}>
-        <div className='card__back-info'>
-          <h2 className='firstSeen'>
-            {name} was born at {origin}
-          </h2>
-          <h3 className='location'>Location: {location}</h3>
-          <h3>Debut: Ep. {episode}</h3>
-          <a href='https://rickandmorty.fandom.com/wiki/Rickipedia'>
-            Learn More
-          </a>
-        </div>
+      <div className='card__back' key='back' onClick={flipCard}>
+        <h2 className='firstSeen'>
+          {name}'s origin is {origin}
+        </h2>
+        <h3 className='location'>Location: {location}</h3>
+        <h3 className='debut'>Debut: Ep. {episode}</h3>
+        <a
+          className='learnMore'
+          href='https://rickandmorty.fandom.com/wiki/Special:Search'
+          target='_blank'
+          onClick={learnMore}
+        >
+          Search More
+        </a>
       </div>
     </ReactCardFlip>
   );
