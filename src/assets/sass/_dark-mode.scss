@@ -46,8 +46,15 @@
     color: var(--dark-color);
     background-color: #ffcc00;
   }
-  main {
+  .results__heading {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+  }
+  .main {
     background-color: black;
+    &__title {
+      color: var(--light-color);
+    }
   }
   .footer {
     background-color: var(--dark-color);

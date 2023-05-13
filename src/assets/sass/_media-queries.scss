@@ -27,6 +27,25 @@
   .card-container {
     grid-template-columns: repeat(2, 1fr);
   }
+  .results__heading {
+    &-title {
+      font-size: 1.1rem;
+    }
+    &-list {
+      font-size: 14px;
+    }
+  }
+  .pagination {
+    .paginationBttns {
+      font-size: 11px;
+    }
+    & a {
+      margin: 6px;
+    }
+  }
+  .main__title {
+    font-size: 1.1rem;
+  }
 }
 
 @media (min-width: 769px) {
@@ -45,6 +64,14 @@
     justify-content: flex-start;
     align-items: center;
   }
+  .results__heading {
+    &-title {
+      font-size: 1.2rem;
+    }
+    &-list {
+      font-size: 16px;
+    }
+  }
   .pagination {
     .paginationBttns {
       font-size: 14px;
@@ -52,6 +79,13 @@
     & a {
       margin: 6px;
     }
+  }
+  .main__title {
+    font-size: 1.2rem;
+  }
+  .backToTop {
+    width: 160px;
+    font-size: 16px;
   }
   .footer {
     font-size: 1rem;
@@ -68,6 +102,17 @@
       height: 40px;
       font-size: 0.9rem;
     }
+  }
+  .results__heading {
+    &-title {
+      font-size: 1.4rem;
+    }
+    &-list {
+      font-size: 18px;
+    }
+  }
+  .main__title {
+    font-size: 1.4rem;
   }
   .card-container {
     grid-template-columns: repeat(4, 1fr);
@@ -93,11 +138,11 @@
     }
   }
   .card {
-    width: 280px;
-    height: 360px;
+    width: 240px;
+    height: 320px;
     &-container {
-      gap: 64px;
-      padding: 64px 0;
+      gap: 32px;
+      padding: 50px 0;
     }
     &__number {
       top: 10%;

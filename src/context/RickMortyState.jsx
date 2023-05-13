@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { rickMortyContext } from './rickMortyContext';
+import { useRef } from 'react';
 
 const RickMortyState = ({ children }) => {
   /* SEARCH RESULTS */
@@ -9,15 +10,15 @@ const RickMortyState = ({ children }) => {
 
   const [view, setView] = useState(loadedView); //updated from LS
 
-  useEffect(() => {
-    localStorage.setItem('view', JSON.stringify(view));
-  }, [view]);
+  /* SCROLL VARIABLES */
+  const pagesRef = useRef(null);
+  const scrollToPagination = () =>
+    pagesRef.current.scrollIntoView({ behavior: 'smooth' });
 
   /* PAGINATION */
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [pageCount, setPageCount] = useState(1); // Total # of pages from the api call, depending on the category
-
   const [loading, setLoading] = useState(false); // state that controls the loading spinner
 
   /* Selected is destructured from the React Paginate component. the component itself manages page selection */
@@ -47,19 +48,26 @@ const RickMortyState = ({ children }) => {
     fetchData();
   }, [currentPage, view]);
 
+  useEffect(() => {
+    localStorage.setItem('view', JSON.stringify(view));
+  }, [view]);
+
   const setCharacter = () => {
     setCurrentPage(0);
     setView('character');
+    scrollToResults();
   };
 
   const setEpisode = () => {
     setCurrentPage(0);
     setView('episode');
+    scrollToResults();
   };
 
   const setLocation = () => {
     setCurrentPage(0);
     setView('location');
+    scrollToResults();
   };
 
   return (
@@ -69,11 +77,13 @@ const RickMortyState = ({ children }) => {
         data,
         pageCount,
         loading,
+        pagesRef,
         setCharacter,
         setEpisode,
         setLocation,
         changePage,
         setLoading,
+        scrollToPagination,
       }}
     >
       {children}

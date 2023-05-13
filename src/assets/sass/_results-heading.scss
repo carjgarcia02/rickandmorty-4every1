@@ -1,0 +1,21 @@
+.results__heading {
+  color: #26354b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 10px;
+  &-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  &-list {
+    font-size: 12px;
+    text-align: justify;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}

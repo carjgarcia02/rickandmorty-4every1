@@ -3,10 +3,10 @@ import { rickMortyContext } from '../context/rickMortyContext';
 import ReactPaginate from 'react-paginate';
 
 const Pagination = () => {
-  const { pageCount, changePage } = useContext(rickMortyContext);
+  const { pageCount, changePage, pagesRef } = useContext(rickMortyContext);
 
   return (
-    <div className='pagination'>
+    <div className='pagination' ref={pagesRef}>
       <ReactPaginate
         previousLabel={'Prev'}
         nextLabel={'Next'}

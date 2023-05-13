@@ -56,7 +56,7 @@ const Navbar = () => {
         </ul>
         <DarkModeBtn />
         <a
-          href='https://www.adultswim.com/videos/rick-and-morty'
+          href='https://pelisflix2.skin/episodio/rick-y-morty-zayy-1x1/'
           className='actionBtn'
           target='_blank'
         >

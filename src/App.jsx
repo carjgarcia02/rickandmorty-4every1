@@ -1,6 +1,7 @@
 //Components
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import ResultsHeading from './components/ResultsHeading';
 import Pagination from './components/Pagination';
 import Results from './components/Results';
 import Footer from './components/Footer';
@@ -49,6 +50,7 @@ const App = () => {
           <div className='App' id={theme}>
             <Navbar />
             <Hero />
+            <ResultsHeading />
             <Pagination />
             <Routes>
               <Route path='/' element={<Results />} />

@@ -1,0 +1,24 @@
+.main {
+  text-align: center;
+  padding: 20px;
+  &__title {
+    font-size: 1rem;
+    color: #26354b;
+  }
+}
+
+.backToTop {
+  background-color: #0ea5e9;
+  width: 120px;
+  color: var(--light-color);
+  font-size: 12px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 12px;
+  margin: 0 auto;
+  &:hover {
+    background-color: #0369a1;
+  }
+}
