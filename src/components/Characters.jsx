@@ -24,9 +24,9 @@ const Characters = () => {
               status={item.status}
               species={item.species}
               gender={item.gender}
-              origin={item?.origin?.name}
-              location={item?.location?.name}
-              episode={item.episode[0].slice(-3).replaceAll("/","")}
+              origin={item.origin.name}
+              location={item.location.name}
+              episode={item.episode[0].slice(-3).replace("e","").replace("/","")}
             />
           ))}
       </div>

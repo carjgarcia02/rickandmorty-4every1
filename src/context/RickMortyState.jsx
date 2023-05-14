@@ -35,8 +35,12 @@ const RickMortyState = ({ children }) => {
       setLoading(true);
       const response = await fetch(url);
       const data = await response.json();
-      setData(data.results);
-      setPageCount(data.info.pages);
+      if (data.results === undefined) {
+        throw new Error('Response does not contain expected property');
+      } else {
+        setData(data.results);
+        setPageCount(data.info.pages);
+      }
     } catch (error) {
       console.log(error);
     } finally {
@@ -44,10 +48,6 @@ const RickMortyState = ({ children }) => {
       console.log('Se han solicitado datos.');
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   useEffect(() => {
     fetchData();
