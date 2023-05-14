@@ -1,12 +1,14 @@
 //Components
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ResultsHeading from './components/ResultsHeading';
+import ResultsHeading from './components/Instructions';
 import Pagination from './components/Pagination';
-import Results from './components/Results';
 import Footer from './components/Footer';
 //Routes
 import { Route, Routes, Navigate } from 'react-router-dom';
+import Characters from './components/Characters';
+import Locations from './components/Locations';
+import Episodes from './components/Episodes';
 //Context
 import RickMortyState from './context/RickMortyState';
 import { createContext, useEffect, useState } from 'react';
@@ -53,8 +55,10 @@ const App = () => {
             <ResultsHeading />
             <Pagination />
             <Routes>
-              <Route path='/' element={<Results />} />
-              <Route path='/results' element={<Results />} />
+              <Route path='/' element={<Characters />} />
+              <Route path='/characters' element={<Characters />} />
+              <Route path='/locations' element={<Locations />} />
+              <Route path='/episodes' element={<Episodes />} />
               <Route path='*' element={<Navigate to='/' />} />
             </Routes>
             <Footer />

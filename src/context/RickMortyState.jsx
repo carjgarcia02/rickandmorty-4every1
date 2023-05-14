@@ -41,8 +41,13 @@ const RickMortyState = ({ children }) => {
       console.log(error);
     } finally {
       setLoading(false);
+      console.log('Se han solicitado datos.');
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   useEffect(() => {
     fetchData();
@@ -55,16 +60,19 @@ const RickMortyState = ({ children }) => {
   const setCharacter = () => {
     setCurrentPage(0);
     setView('character');
+    pagesRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   const setEpisode = () => {
     setCurrentPage(0);
     setView('episode');
+    pagesRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   const setLocation = () => {
     setCurrentPage(0);
     setView('location');
+    pagesRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (

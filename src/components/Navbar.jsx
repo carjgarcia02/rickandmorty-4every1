@@ -45,13 +45,34 @@ const Navbar = () => {
         </div>
         <ul className='navbar__links'>
           <li onClick={() => setCharacter()}>
-            <NavLink to='/results'>Characters</NavLink>
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? '#ff4f00' : '' };
+              }}
+              to='/characters'
+            >
+              Characters
+            </NavLink>
           </li>
           <li onClick={() => setLocation()}>
-            <NavLink to='/results'>Locations</NavLink>
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? '#ff4f00' : '' };
+              }}
+              to='/locations'
+            >
+              Locations
+            </NavLink>
           </li>
           <li onClick={() => setEpisode()}>
-            <NavLink to='/results'>Episodes</NavLink>
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? '#ff4f00' : '' };
+              }}
+              to='/episodes'
+            >
+              Episodes
+            </NavLink>
           </li>
         </ul>
         <DarkModeBtn />
@@ -76,13 +97,34 @@ const Navbar = () => {
       <div className={`dropdown_menu ${open}`}>
         <ul>
           <li onClick={() => setCharacter()}>
-            <NavLink to='/results'>Characters</NavLink>
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? '#ff4f00' : '' };
+              }}
+              to='/characters'
+            >
+              Characters
+            </NavLink>
           </li>
           <li onClick={() => setLocation()}>
-            <NavLink to='/results'>Locations</NavLink>
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? '#ff4f00' : '' };
+              }}
+              to='/locations'
+            >
+              Locations
+            </NavLink>
           </li>
           <li onClick={() => setEpisode()}>
-            <NavLink to='/results'>Episodes</NavLink>
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? '#ff4f00' : '' };
+              }}
+              to='/episodes'
+            >
+              Episodes
+            </NavLink>
           </li>
         </ul>
         <a

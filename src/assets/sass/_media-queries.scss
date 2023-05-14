@@ -27,7 +27,7 @@
   .card-container {
     grid-template-columns: repeat(2, 1fr);
   }
-  .results__heading {
+  .instructions {
     &-title {
       font-size: 1.1rem;
     }
@@ -64,7 +64,7 @@
     justify-content: flex-start;
     align-items: center;
   }
-  .results__heading {
+  .instructions {
     &-title {
       font-size: 1.2rem;
     }
@@ -103,7 +103,7 @@
       font-size: 0.9rem;
     }
   }
-  .results__heading {
+  .instructions {
     &-title {
       font-size: 1.4rem;
     }
