@@ -14,7 +14,7 @@ const Locations = () => {
         {view[0].toUpperCase() + view.substring(1).toLowerCase() + 's'}
       </h4>
       {loading && <DataLoader />}
-      <div className='card-container'>
+      <div className={loading ? 'hidden' : 'card-container'}>
         {data &&
           data.map((item) => (
             <LocationCard
