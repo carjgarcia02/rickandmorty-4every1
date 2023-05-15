@@ -9,7 +9,6 @@ const CharacterCard = ({
   gender,
   origin,
   location,
-  episode,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -50,7 +49,6 @@ const CharacterCard = ({
           {name}'s origin is {origin}
         </h2>
         <h3 className='location'>Location: {location}</h3>
-        <h3 className='debut'>Debut: Ep. {episode}</h3>
         <a
           className='learnMore'
           href='https://rickandmorty.fandom.com/wiki/Special:Search'
