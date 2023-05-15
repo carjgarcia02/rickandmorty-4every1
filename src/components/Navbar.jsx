@@ -54,16 +54,6 @@ const Navbar = () => {
               Characters
             </NavLink>
           </li>
-          <li onClick={() => setLocation()}>
-            <NavLink
-              style={({ isActive }) => {
-                return { color: isActive ? '#ff4f00' : '' };
-              }}
-              to='/locations'
-            >
-              Locations
-            </NavLink>
-          </li>
           <li onClick={() => setEpisode()}>
             <NavLink
               style={({ isActive }) => {
@@ -72,6 +62,16 @@ const Navbar = () => {
               to='/episodes'
             >
               Episodes
+            </NavLink>
+          </li>
+          <li onClick={() => setLocation()}>
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? '#ff4f00' : '' };
+              }}
+              to='/locations'
+            >
+              Locations
             </NavLink>
           </li>
         </ul>
@@ -106,16 +106,6 @@ const Navbar = () => {
               Characters
             </NavLink>
           </li>
-          <li onClick={() => setLocation()}>
-            <NavLink
-              style={({ isActive }) => {
-                return { color: isActive ? '#ff4f00' : '' };
-              }}
-              to='/locations'
-            >
-              Locations
-            </NavLink>
-          </li>
           <li onClick={() => setEpisode()}>
             <NavLink
               style={({ isActive }) => {
@@ -124,6 +114,16 @@ const Navbar = () => {
               to='/episodes'
             >
               Episodes
+            </NavLink>
+          </li>
+          <li onClick={() => setLocation()}>
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? '#ff4f00' : '' };
+              }}
+              to='/locations'
+            >
+              Locations
             </NavLink>
           </li>
         </ul>

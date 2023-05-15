@@ -1,11 +1,11 @@
 //Components
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ResultsHeading from './components/Instructions';
+import Instructions from './components/Instructions';
 import Pagination from './components/Pagination';
 import Footer from './components/Footer';
 //Routes
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Characters from './components/Characters';
 import Locations from './components/Locations';
 import Episodes from './components/Episodes';
@@ -40,8 +40,14 @@ const App = () => {
     setInitialLoader(true);
     setTimeout(() => {
       setInitialLoader(false);
-    }, 1500);
+    }, 1200);
   }, []);
+
+  const [isFirstTime, setIsFirstTime] = useState(true);
+
+  useEffect(() => {
+    setIsFirstTime(false);
+  });
 
   return (
     <RickMortyState>
@@ -52,14 +58,32 @@ const App = () => {
           <div className='App' id={theme}>
             <Navbar />
             <Hero />
-            <ResultsHeading />
+            <Instructions />
             <Pagination />
             <Routes>
               <Route path='/' element={<Characters />} />
               <Route path='/characters' element={<Characters />} />
-              <Route path='/locations' element={<Locations />} />
-              <Route path='/episodes' element={<Episodes />} />
-              <Route path='*' element={<Navigate to='/' />} />
+              <Route
+                path='/episodes'
+                element={
+                  isFirstTime === true ? (
+                    <Navigate to='/characters' />
+                  ) : (
+                    <Episodes />
+                  )
+                }
+              />
+              <Route
+                path='/locations'
+                element={
+                  isFirstTime === true ? (
+                    <Navigate to='/characters' />
+                  ) : (
+                    <Locations />
+                  )
+                }
+              />
+              <Route path='*' element={<Navigate to='/characters' />} />
             </Routes>
             <Footer />
           </div>

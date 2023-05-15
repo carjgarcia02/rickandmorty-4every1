@@ -4,11 +4,7 @@ import { useRef } from 'react';
 
 const RickMortyState = ({ children }) => {
   /* SEARCH RESULTS */
-  const loadedView = localStorage.getItem('view')
-    ? JSON.parse(localStorage.getItem('view'))
-    : 'character'; // Load view from local storage.
-
-  const [view, setView] = useState(loadedView); //updated from LS
+  const [view, setView] = useState('character');
 
   /* SCROLL VARIABLES */
   const pagesRef = useRef(null);
@@ -17,9 +13,9 @@ const RickMortyState = ({ children }) => {
 
   /* PAGINATION */
   const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0); // Used for pagination
   const [pageCount, setPageCount] = useState(1); // Total # of pages from the api call, depending on the category
-  const [loading, setLoading] = useState(false); // state that controls the loading spinner
+  const [loading, setLoading] = useState(false); // State that controls the loading spinner
 
   /* Selected is destructured from the React Paginate component. the component itself manages page selection */
   const changePage = ({ selected }) => {
@@ -28,7 +24,6 @@ const RickMortyState = ({ children }) => {
 
   /* URL */
   let url = `https://rickandmortyapi.com/api/${view}/?page=${currentPage + 1}`;
-  // small fix to the url currentPage (+1) so that it works as intended with React Paginate.
 
   const fetchData = async () => {
     try {
@@ -45,17 +40,12 @@ const RickMortyState = ({ children }) => {
       console.log(error);
     } finally {
       setLoading(false);
-      console.log('Se han solicitado datos.');
     }
   };
 
   useEffect(() => {
     fetchData();
   }, [currentPage, view]);
-
-  useEffect(() => {
-    localStorage.setItem('view', JSON.stringify(view));
-  }, [view]);
 
   const setCharacter = () => {
     setCurrentPage(0);
