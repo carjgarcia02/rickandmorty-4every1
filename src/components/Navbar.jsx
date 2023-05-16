@@ -15,8 +15,7 @@ import DarkModeBtn from './DarkModeBtn';
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [open, setOpen] = useState('');
-  const { setCharacter, setEpisode, setLocation } =
-    useContext(rickMortyContext);
+  const { handleChangeCategory } = useContext(rickMortyContext);
 
   const handleHamburgerMenu = () => {
     if (isClicked === false) {
@@ -44,7 +43,7 @@ const Navbar = () => {
           </a>
         </div>
         <ul className='navbar__links'>
-          <li onClick={() => setCharacter()}>
+          <li onClick={() => handleChangeCategory('character')}>
             <NavLink
               style={({ isActive }) => {
                 return { color: isActive ? '#ff4f00' : '' };
@@ -54,7 +53,7 @@ const Navbar = () => {
               Characters
             </NavLink>
           </li>
-          <li onClick={() => setEpisode()}>
+          <li onClick={() => handleChangeCategory('episode')}>
             <NavLink
               style={({ isActive }) => {
                 return { color: isActive ? '#ff4f00' : '' };
@@ -64,7 +63,7 @@ const Navbar = () => {
               Episodes
             </NavLink>
           </li>
-          <li onClick={() => setLocation()}>
+          <li onClick={() => handleChangeCategory('location')}>
             <NavLink
               style={({ isActive }) => {
                 return { color: isActive ? '#ff4f00' : '' };
@@ -94,9 +93,10 @@ const Navbar = () => {
         </div>
       </nav>
 
+      {/* DROPDOWN MENU */}
       <div className={`dropdown_menu ${open}`}>
         <ul>
-          <li onClick={() => setCharacter()}>
+          <li onClick={() => handleChangeCategory('character')}>
             <NavLink
               style={({ isActive }) => {
                 return { color: isActive ? '#ff4f00' : '' };
@@ -106,7 +106,7 @@ const Navbar = () => {
               Characters
             </NavLink>
           </li>
-          <li onClick={() => setEpisode()}>
+          <li onClick={() => handleChangeCategory('episode')}>
             <NavLink
               style={({ isActive }) => {
                 return { color: isActive ? '#ff4f00' : '' };
@@ -116,7 +116,7 @@ const Navbar = () => {
               Episodes
             </NavLink>
           </li>
-          <li onClick={() => setLocation()}>
+          <li onClick={() => handleChangeCategory('location')}>
             <NavLink
               style={({ isActive }) => {
                 return { color: isActive ? '#ff4f00' : '' };

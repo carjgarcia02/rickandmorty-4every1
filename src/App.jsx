@@ -1,21 +1,19 @@
+import { createContext, useEffect, useState } from 'react';
 //Components
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Instructions from './components/Instructions';
 import Pagination from './components/Pagination';
+import Results from './components/Results';
 import Footer from './components/Footer';
 //Routes
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Characters from './components/Characters';
-import Locations from './components/Locations';
-import Episodes from './components/Episodes';
 //Context
 import RickMortyState from './context/RickMortyState';
-import { createContext, useEffect, useState } from 'react';
 //Loading Spinner
 import Pacman from './components/Pacman';
 
-/* CONTEXT CREATED FOR DARK MODE */
+/* Context created for Dark Mode */
 export const ThemeContext = createContext(null);
 
 const App = () => {
@@ -43,12 +41,6 @@ const App = () => {
     }, 1200);
   }, []);
 
-  const [isFirstTime, setIsFirstTime] = useState(true);
-
-  useEffect(() => {
-    setIsFirstTime(false);
-  });
-
   return (
     <RickMortyState>
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -61,29 +53,9 @@ const App = () => {
             <Instructions />
             <Pagination />
             <Routes>
-              <Route path='/' element={<Characters />} />
-              <Route path='/characters' element={<Characters />} />
-              <Route
-                path='/episodes'
-                element={
-                  isFirstTime === true ? (
-                    <Navigate to='/characters' />
-                  ) : (
-                    <Episodes />
-                  )
-                }
-              />
-              <Route
-                path='/locations'
-                element={
-                  isFirstTime === true ? (
-                    <Navigate to='/characters' />
-                  ) : (
-                    <Locations />
-                  )
-                }
-              />
-              <Route path='*' element={<Navigate to='/characters' />} />
+              <Route path='/' element={<Results />} />
+              <Route path='/results' element={<Results />} />
+              <Route path='*' element={<Navigate to='/' />} />
             </Routes>
             <Footer />
           </div>
